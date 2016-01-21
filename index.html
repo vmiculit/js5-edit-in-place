@@ -9,6 +9,40 @@
 	<title>JS5 - Edit in Place!</title>
 </head>
 <body ng-controller="js5Troller">
+	<h1>User Profile</h1>
+		<table class="user-profile-table">
+
+			<tr class="user-profile-row">
+				<td class="user-profile-cell">Name:</td>
+
+				<td class="user-profile-cell">
+					<span ng-show="textboxSwitch[0]" ng-click="swapFieldsOn(0, $event)">{{user.name}}</span>
+
+					<input ng-show="inputSwitch[0]" ng-model="user.name" ng-blur="swapFieldsOff(0)" class="user-profile-input" type="text">
+				</td>
+			</tr>
+
+			<tr class="user-profile-row">
+				<td class="user-profile-cell">Email:</td>
+
+				<td class="user-profile-cell">
+					<span ng-show="textboxSwitch[1]" ng-click="swapFieldsOn(1, $event)">{{user.email}}</span>
+
+					<input ng-show="inputSwitch[1]" ng-model="user.email" ng-blur="swapFieldsOff(1)" class="user-profile-input" type="text">
+				</td>
+			</tr>
+
+			<tr class="user-profile-row">
+				<td class="user-profile-cell">Password:</td>
+
+				<td class="user-profile-cell">
+					<span ng-show="textboxSwitch[2]" ng-click="swapFieldsOn(2, $event)">{{user.password}}</span>
+
+					<input ng-show="inputSwitch[2]" ng-model="user.password" ng-blur="swapFieldsOff(2)" class="user-profile-input" type="text">
+				</td>
+			</tr>
+
+		</table>
 </body>
 
 </html>
